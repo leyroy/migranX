@@ -5,11 +5,8 @@ import { AnimatePresence, motion } from "framer-motion";
 
 function Modal({ openModal }) {
   return (
-    <div initial={{ opacity: 0, x: "100%" }}
-            animate={{ opacity: 1, x: "0%" }}
-            transition={{ duration: 0.4, }}
-            exit={{ opacity: 0, x: "100%", transition:{duration:0.5} }} className="fixed z-30  left-0 h-screen top-0 bottom-0 right-0 ">
-      <div className="h-full flex relative items-center justify-center w-full">
+    <div className="fixed z-30  left-0 h-screen w-screen top-0 bottom-0 right-0 ">
+      <div className="h-full px-3 flex relative items-center justify-center w-full">
         <div
           onClick={openModal}
           className="absolute backdrop-blur backdrop-brightness-50 top-0 bottom-0 w-full h-full"
@@ -21,7 +18,7 @@ function Modal({ openModal }) {
             animate={{ opacity: 1, x: "0%" }}
             transition={{ duration: 0.4 }}
             exit={{ opacity: 0, x: "100%", transition:{duration:0.35} }}
-            className="w-3/6 py-5 h-3/5 gap-4 bg-white rounded-md flex-col md:px-10 px-2 box shadow-md z-10 modal flex items-center justify-center"
+            className="md:w-3/6 w-full py-5 h-2/5 md:h-3/5 gap-4 bg-white rounded-md flex-col md:px-10 px-2 box shadow-md z-10 modal flex items-center justify-center"
           >
             <div className="mb-auto ml-auto" onClick={openModal}>
               <IoMdClose />

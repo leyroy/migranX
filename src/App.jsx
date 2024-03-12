@@ -7,7 +7,7 @@ import Modal from "./components/Modal";
 import OurApps from "./components/OurApps";
 
 function App() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(true);
   const openModal = () => {
     setIsModalOpen(!isModalOpen);
     if (!isModalOpen) {
@@ -23,7 +23,7 @@ function App() {
       <div  className="overflow-x-hidden w-screen">
         <Home sectionRef={sectionRef} />
         <div ref={sectionRef}>
-        <Market />
+        <Market openModal={openModal}/>
         <OurApps />
       <FrequentAskQ />
       <Footer />

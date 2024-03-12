@@ -54,8 +54,8 @@ export default function Market({openModal, sectionRef}) {
                   <span>$</span>
                   {data.produc_price}
                 </div>
-                <div onClick={openModal} className="flex cursor-ponter w-fit gap-5 mt-4 items-center justify-center">
-                  <button>Oder Now</button>
+                <div className="flex cursor-ponter w-fit gap-5 mt-4 items-center justify-center">
+                  <button onClick={openModal}>Oder Now</button>
                   <MdArrowForwardIos />
                 </div>
               </div>
