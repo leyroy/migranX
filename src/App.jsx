@@ -7,7 +7,7 @@ import Modal from "./components/Modal";
 import OurApps from "./components/OurApps";
 
 function App() {
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const openModal = () => {
     setIsModalOpen(!isModalOpen);
     if (!isModalOpen) {
