@@ -25,7 +25,7 @@ export default function FrequentAskQ() {
           {freqentAskedQ.map((q) => (
             <div key={q.id} className="md:px-10">
               <div onClick={() => hanldeShowContent(q.id)} className="w-full flex px-4 text-3xl justify-between font-normal ">
-                <h1 className="font-semibold">{q.tittile}</h1>
+                <h1 className="font-semibold md:text-xl text-lg">{q.tittile}</h1>
                 <div
                   
                   className="cursor-pointer"
@@ -49,7 +49,7 @@ export default function FrequentAskQ() {
                   animate={{ height: "auto", opacity: 1 }}
                   exit={{ height: "0", opacity:0 }}
                   transition={{ duration:duration }}
-                  className="text-gray-800 overflow-hidden px-5 overflow-y-hidden text-3xl py-2 font-normal"
+                  className="text-gray-800 overflow-hidden px-5 overflow-y-hidden md:text-xl text-lg py-2 font-normal"
                 >
                   {q.question}
                 </motion.div>

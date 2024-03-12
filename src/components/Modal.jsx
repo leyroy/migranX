@@ -1,7 +1,7 @@
 import React from "react";
 import { IoLocationSharp } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 function Modal({ openModal }) {
   return (

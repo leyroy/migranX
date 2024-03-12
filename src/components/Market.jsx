@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { MdArrowForwardIos } from "react-icons/md";
+import {AnimatePresence, motion} from "framer-motion"
 import { categories, products } from "../Assets/data";
 
 export default function Market({openModal, sectionRef}) {
@@ -28,13 +29,15 @@ export default function Market({openModal, sectionRef}) {
           {categories.map((category, index) => (
             <div
               className="flex items-center gap-5 cursor-pointer"
-              onClick={() => setFilterdProducts(category.procuct_category)}
+              onClick={() => setFilterdProducts(category.name)}
             >
-              <img
-                src={category.image}
-                className="h-14 min-w-16 mt-2 ml-3 rounded-full"
-                alt=""
-              />
+              <div>
+                <img
+                  src={category.image}
+                  className="h-12 w-16 mt-2 ml-3"
+                  alt=""
+                />
+              </div>
               <div className="hidden lg:block">
                 {category.name}
               </div>
@@ -47,7 +50,10 @@ export default function Market({openModal, sectionRef}) {
               key={data.ie}
               className="relative bg-yellow-500 rounded-md font-semibold text-xl flex items-center justify-center h-96 w-80 my-2 p-2"
             >
-              <img src={data.product_image} alt="" className="h-full py-3" />
+             <AnimatePresence>
+             <motion.img initial={{x:"100%", scale:0}} animate={{x:"0", scale:1}} transition={{duration:0.3}} src={data.product_image} alt="" className="h-full py-3" />
+
+             </AnimatePresence>
               <div className=" gap-2 rounded w-full h-full absolute items-start p-3 justify-end bg-gradient-to-b to-gray-950 from-transparent backdrop-contrast-50 flex flex-col">
                 <p className="text-2xl font-semibold">{data.product_label}</p>
                 <div>
