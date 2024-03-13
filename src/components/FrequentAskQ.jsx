@@ -5,7 +5,7 @@ import { FaMinus,FaPlus } from "react-icons/fa6";
 
 export default function FrequentAskQ() {
   const [isOpen, setIsOpen] = useState(0);
-  const [duration, setDuration] = useState(0.4); 
+  const [duration, setDuration] = useState(0.15); 
   const hanldeShowContent = (id) => {
     if (isOpen !== id) {
       setIsOpen(id);
@@ -14,10 +14,10 @@ export default function FrequentAskQ() {
     }
   };
 
-  const dropdownVariants = {
-    open: { scale: 1, y: 0, opacity: 1, transition: { duration: 0.4 } },
-    closed: { scale: 0, y: "100%", opacity: 0, transition: { duration: 0.5 } },
-  };
+  // const dropdownVariants = {
+  //   open: { scale: 1, y: 0, opacity: 1, transition: { duration: 0.4 } },
+  //   closed: { scale: 0, y: "100%", opacity: 0, transition: { duration: 0.5 } },
+  // };
   return (
     <div className="min-h-screen bg-white  flex items-center justify-center w-screen">
       <div className=" w-full min-h-5/6 py-8 flex items-center justify-center md:w-5/6 px-4 m-auto bg-orange-100">

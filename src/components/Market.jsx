@@ -20,15 +20,15 @@ export default function Market({openModal, sectionRef}) {
         <h1 className="mx-auto text-2xl font-bold text-orange-500">
           OUR MARKETS
         </h1>
-        <p className="text-3xl text-center font-extrabold mx-auto">
+        <p className="md:text-3xl text-2xl text-center font-extrabold mx-auto">
           Markets That Always Brings Home To You
         </p>
       </div>
       <div className="w-full flex-1 gap-3 flex lg:flex-row flex-col items-center justify-start">
-        <div className=" flex-row flex lg:flex-col lg:overflow-y-scroll lg:w-72 ">
+        <div className=" flex-row flex lg:flex-col gap-4 lg:overflow-y-scroll lg:w-72 ">
           {categories.map((category, index) => (
             <div
-              className="flex items-center gap-5 cursor-pointer"
+              className={`flex items-center ${filterdProducts === category.name && "bg-orange-500"} gap-2 p-1 rounded-md hover:bg-orange-500  cursor-pointer`}
               onClick={() => setFilterdProducts(category.name)}
             >
               <div>
@@ -48,19 +48,19 @@ export default function Market({openModal, sectionRef}) {
           {data.map((data) => (
             <div
               key={data.ie}
-              className="relative bg-yellow-500 rounded-md font-semibold text-xl flex items-center justify-center h-96 w-80 my-2 p-2"
+              className="relative font-semibold text-xl flex items-center justify-center h-96 w-80 my-2 p-2"
             >
              <AnimatePresence>
              <motion.img initial={{x:"100%", scale:0}} animate={{x:"0", scale:1}} transition={{duration:0.3}} src={data.product_image} alt="" className="h-full py-3" />
 
              </AnimatePresence>
-              <div className=" gap-2 rounded w-full h-full absolute items-start p-3 justify-end bg-gradient-to-b to-gray-950 from-transparent backdrop-contrast-50 flex flex-col">
-                <p className="text-2xl font-semibold">{data.product_label}</p>
-                <div>
+              <div className=" text-3xl gap-2 rounded-md w-full h-full absolute items-start p-3 justify-end bg-gradient-to-b to-gray-950 from-transparent backdrop-contrast-50 flex flex-col">
+                <p className=" font-semibold">{data.product_label}</p>
+                <div className="font-bold">
                   <span>$</span>
                   {data.produc_price}
                 </div>
-                <div className="flex cursor-ponter w-fit gap-5 mt-4 items-center justify-center">
+                <div className="flex cursor-ponter w-fit gap-5 mt-2 items-center justify-center">
                   <button onClick={openModal}>Oder Now</button>
                   <MdArrowForwardIos />
                 </div>
