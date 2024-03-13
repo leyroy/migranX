@@ -28,7 +28,7 @@ export default function Market({openModal, sectionRef}) {
         <div className=" flex-row flex lg:flex-col gap-4 lg:overflow-y-scroll lg:w-72 ">
           {categories.map((category, index) => (
             <div
-              className={`flex items-center ${filterdProducts === category.name && "bg-orange-500"} gap-2 p-1 rounded-md hover:bg-orange-500  cursor-pointer`}
+              className={`flex items-center ${filterdProducts === category.name && "bg-orange-500"} transition-all duration-300 ease-in-out gap-2 p-1 rounded-md hover:bg-orange-500  cursor-pointer`}
               onClick={() => setFilterdProducts(category.name)}
             >
               <div>
